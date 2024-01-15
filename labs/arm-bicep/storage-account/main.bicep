@@ -1,4 +1,4 @@
-param location string = 'westeurope'
+param location string = 'southeastasia'
 param storageAccountName string
 param storageSku string = 'Standard_LRS'
 

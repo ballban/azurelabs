@@ -109,7 +109,7 @@ Open _Advanced tools_ for the web app in the Portal and launch the Kudu session.
 
 The app will keep restarting because the failure causes it to exit. You'll eventually see a useful error log like this:
 
-_{"error":{"code":"Forbidden","message":"The user, group or application 'appid=19ee0b80-40d0-4a42-b4ca-b8697c84c6a8;oid=4a09a335-0716-406d-a12f-9cafadae0325;iss=https://sts.windows.net/68c58dc9-c7db-440f-8c32-ac672250d642/' does not have secrets list permission on key vault 'labsvnetappses;location=westeurope'. For help resolving this issue, please see https://go.microsoft.com/fwlink/?linkid=2125287","innererror":{"code":"AccessDenied"}}}_
+_{"error":{"code":"Forbidden","message":"The user, group or application 'appid=19ee0b80-40d0-4a42-b4ca-b8697c84c6a8;oid=4a09a335-0716-406d-a12f-9cafadae0325;iss=https://sts.windows.net/68c58dc9-c7db-440f-8c32-ac672250d642/' does not have secrets list permission on key vault 'labsvnetappses;location=southeastasia'. For help resolving this issue, please see https://go.microsoft.com/fwlink/?linkid=2125287","innererror":{"code":"AccessDenied"}}}_
 
 </details>
 
@@ -134,7 +134,7 @@ Try the app again... It will fail.
 
 Same process and same long wait, but you will see a new error: 
 
-_{"error":{"code":"Forbidden","message":"Client address is not authorized and caller is not a trusted service.\r\nClient address: 20.126.176.160\r\nCaller: appid=19ee0b80-40d0-4a42-b4ca-b8697c84c6a8;oid=4a09a335-0716-406d-a12f-9cafadae0325;iss=https://sts.windows.net/68c58dc9-c7db-440f-8c32-ac672250d642/;xmsmirid=/subscriptions/161aa8d6-1b59-4fff-946c-e1172b68d76c/resourcegroups/labs-vnet-apps/providers/Microsoft.Web/sites/app-name;xmsazrid=/subscriptions/161aa8d6-1b59-4fff-946c-e1172b68d76c/resourcegroups/labs-vnet-apps/providers/Microsoft.Web/sites/app-name\r\nVault: labsvnetappses;location=westeurope","innererror":{"code":"ForbiddenByFirewall"}}}_
+_{"error":{"code":"Forbidden","message":"Client address is not authorized and caller is not a trusted service.\r\nClient address: 20.126.176.160\r\nCaller: appid=19ee0b80-40d0-4a42-b4ca-b8697c84c6a8;oid=4a09a335-0716-406d-a12f-9cafadae0325;iss=https://sts.windows.net/68c58dc9-c7db-440f-8c32-ac672250d642/;xmsmirid=/subscriptions/161aa8d6-1b59-4fff-946c-e1172b68d76c/resourcegroups/labs-vnet-apps/providers/Microsoft.Web/sites/app-name;xmsazrid=/subscriptions/161aa8d6-1b59-4fff-946c-e1172b68d76c/resourcegroups/labs-vnet-apps/providers/Microsoft.Web/sites/app-name\r\nVault: labsvnetappses;location=southeastasia","innererror":{"code":"ForbiddenByFirewall"}}}_
 
 </details>
 

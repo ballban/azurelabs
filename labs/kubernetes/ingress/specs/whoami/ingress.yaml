@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   name: whoami
   labels:
-    kubernetes.courselabs.co: ingress
+    kubernetes.azureauthority.in: ingress
 spec:
   rules:
   - host: whoami.local

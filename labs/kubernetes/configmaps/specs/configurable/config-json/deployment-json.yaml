@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: configurable
   labels: 
-    kubernetes.courselabs.co: configmaps
+    kubernetes.azureauthority.in: configmaps
     app: configurable
 spec:
   selector:

@@ -124,7 +124,7 @@ az keyvault secret list-versions --name sql-password --vault-name <kv-name>
 
 ## Lab
 
-Secrets are just one type of data which you can store in KeyVault. You can also generate and store encryption keys and TLS certificates. Use the CLI to create a self-signed certificate where the subject common name (CN) is `azure.courselabs.co` and which is valid for 6 months. Download the public and private keys for your new certificate.
+Secrets are just one type of data which you can store in KeyVault. You can also generate and store encryption keys and TLS certificates. Use the CLI to create a self-signed certificate where the subject common name (CN) is `azure.azureauthority.in` and which is valid for 6 months. Download the public and private keys for your new certificate.
 
 > Stuck? Try [hints](hints.md) or check the [solution](solution.md).
 

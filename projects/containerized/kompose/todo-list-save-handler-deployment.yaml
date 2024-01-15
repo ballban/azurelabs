@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: C:\Program Files\kompose\kompose.exe -f ../docker-compose.yml convert
+    kompose.version: 1.31.2 (a92241f79)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: todo-list-save-handler
+  name: todo-list-save-handler
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: todo-list-save-handler
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: C:\Program Files\kompose\kompose.exe -f ../docker-compose.yml convert
+        kompose.version: 1.31.2 (a92241f79)
+      creationTimestamp: null
+      labels:
+        io.kompose.network/containerized-default: "true"
+        io.kompose.service: todo-list-save-handler
+    spec:
+      containers:
+        - image: courselabs/todo-list-save-handler:2211
+          name: todo-list-save-handler
+          resources: {}
+          volumeMounts:
+            - mountPath: /app/config/
+              name: appsettings
+              readOnly: true
+      volumes:
+        - name: appsettings
+          configMap:
+            name: appsettings

@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   name: pi
   labels:
-    kubernetes.courselabs.co: ingress
+    kubernetes.azureauthority.in: ingress
 spec:
   rules:
   - host: pi.local

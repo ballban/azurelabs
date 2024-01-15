@@ -3,4 +3,4 @@ kind: Namespace
 metadata:
   name: configurable
   labels:
-    kubernetes.courselabs.co: ingress
+    kubernetes.azureauthority.in: ingress

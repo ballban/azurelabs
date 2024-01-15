@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # *** replace these with your actual SA name and key:
-ACCOUNT_NAME='<sa-name>'
-ACCOUNT_KEY='<sa-key>'
+ACCOUNT_NAME='junglabsstoragefiles'
+ACCOUNT_KEY='bAnCyCbiv7wbe3p5+RMn9NltETmO96bJ9J50EY4ZAA6nf3EqvtsPztazVKDgHvnu2lppOHVFZ81p+AStJv8bCg=='
 # ***
 
 CONTAINER_NAME='labs'

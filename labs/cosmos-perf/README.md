@@ -21,7 +21,7 @@ Request Units per second (RU/s) define the level of performance of your CosmosDB
 Create a new Cosmos DB account:
 
 ```
-az group create -n labs-cosmos-perf  -l westeurope --tags courselabs=azure
+az group create -n labs-cosmos-perf  -l southeastasia --tags courselabs=azure
 
 az cosmosdb create -g labs-cosmos-perf --enable-public-network --kind GlobalDocumentDB --default-consistency-level Eventual -n <cosmos-db-name>
 ```

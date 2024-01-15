@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: whoami
   labels:
-    kubernetes.courselabs.co: containerprobes
+    kubernetes.azureauthority.in: containerprobes
 spec:
   replicas: 2
   selector:

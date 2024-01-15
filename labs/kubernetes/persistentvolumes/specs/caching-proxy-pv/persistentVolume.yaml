@@ -3,7 +3,7 @@ kind: PersistentVolume
 metadata:
   name: pi-proxy-pv
   labels: 
-    kubernetes.courselabs.co: persistentvolumes
+    kubernetes.azureauthority.in: persistentvolumes
     app: pi-proxy
 spec:
   capacity:

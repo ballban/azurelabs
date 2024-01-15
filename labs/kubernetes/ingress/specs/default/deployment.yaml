@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: nginx
   labels:
-    kubernetes.courselabs.co: ingress
+    kubernetes.azureauthority.in: ingress
 spec:
   selector:
     matchLabels:

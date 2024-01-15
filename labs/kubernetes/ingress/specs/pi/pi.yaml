@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: pi-internal
   labels:
-    kubernetes.courselabs.co: ingress
+    kubernetes.azureauthority.in: ingress
 spec:
   ports:
     - port: 80
@@ -18,7 +18,7 @@ kind: Deployment
 metadata:
   name: pi-web
   labels:
-    kubernetes.courselabs.co: ingress
+    kubernetes.azureauthority.in: ingress
 spec:
   replicas: 2
   selector:

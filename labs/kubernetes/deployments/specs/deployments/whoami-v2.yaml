@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: whoami
   labels:
-    kubernetes.courselabs.co: deployments
+    kubernetes.azureauthority.in: deployments
 spec:
   replicas: 2
   selector:

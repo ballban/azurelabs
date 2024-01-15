@@ -8,7 +8,7 @@ You introduce some complexity using namespaces but they give you a lot of safegu
 
 ## API specs
 
-- [Namespace](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.20/#namespace-v1-core)
+- [Namespace](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.28/#namespace-v1-core)
 
 <details>
   <summary>YAML overview</summary>
@@ -178,7 +178,7 @@ kubectl get deploy -A --show-labels
 You can only use Kubectl with one namespace or all namespaces, so you might want additional labels for objects like Services, so you can list across all namespace and filter by label:
 
 ```
-kubectl get svc -A -l kubernetes.courselabs.co=namespaces
+kubectl get svc -A -l kubernetes.azureauthority.in=namespaces
 ```
 
 ## Namespaces and Service DNS
@@ -215,8 +215,8 @@ ___
 
 ```
 # deleting a namespace deletes everything inside it:
-kubectl delete ns -l kubernetes.courselabs.co=namespaces
+kubectl delete ns -l kubernetes.azureauthority.in=namespaces
 
 # which just leaves the sleep Pods:
-kubectl delete po -A -l kubernetes.courselabs.co=namespaces
+kubectl delete po -A -l kubernetes.azureauthority.in=namespaces
 ```

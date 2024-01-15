@@ -3,7 +3,7 @@ kind: IngressClass
 metadata:
   labels:
     app.kubernetes.io/component: controller
-    kubernetes.courselabs.co: ingress 
+    kubernetes.azureauthority.in: ingress 
   name: nginx
   annotations:
     ingressclass.kubernetes.io/is-default-class: "true"

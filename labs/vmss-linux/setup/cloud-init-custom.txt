@@ -14,7 +14,7 @@ write_files:
                 <h1>Hello from {{ v1.local_hostname }}!</h1>
             </div>
             <div class="footer">
-                A demo app from the <a href="https://azure.courselabs.co">Azure course labs</a>
+                A demo app from the <a href="https://azure.azureauthority.in">Azure course labs</a>
             </div>
         </body>
       </html>

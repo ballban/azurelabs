@@ -4,7 +4,7 @@ metadata:
   name: configurable-np
   namespace: configurable
   labels:
-    kubernetes.courselabs.co: namespaces
+    kubernetes.azureauthority.in: namespaces
 spec:
   selector:
     app: configurable
@@ -21,7 +21,7 @@ metadata:
   name: configurable-lb
   namespace: configurable
   labels:
-    kubernetes.courselabs.co: namespaces
+    kubernetes.azureauthority.in: namespaces
 spec:
   selector:
     app: configurable

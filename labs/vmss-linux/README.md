@@ -19,7 +19,7 @@ VM Scale Sets are great for running applications at scale, but when you're first
 Start with a new RG for this lab:
 
 ```
-az group create -n labs-vmss-linux --tags courselabs=azure -l westeurope
+az group create -n labs-vmss-linux --tags courselabs=azure -l southeastasia
 ```
 
 cloud-init is a powerful cross-platform system for configuring new machines. You can do all the usual steps for deploying pre-requisites, installing applications and writing config files:
@@ -37,7 +37,7 @@ You can reference local files in `az` commands with `@<file-path>` syntax:
 
 ```
 # remember to use a size which is available to you:
-az vm create -l westeurope -g labs-vmss-linux -n web01 --image UbuntuLTS --size Standard_A1_v2 --custom-data @labs/vmss-linux/setup/cloud-init.txt --public-ip-address-dns-name <your-dns-name>
+az vm create -l southeastasia -g labs-vmss-linux -n web01 --image UbuntuLTS --size Standard_A1_v2 --custom-data @labs/vmss-linux/setup/cloud-init.txt --public-ip-address-dns-name <your-dns-name> --generate-ssh-keys
 ```
 
 </details><br/>
@@ -77,7 +77,7 @@ az vmss create -n vmss-web01 -g labs-vmss-linux --vm-sku Standard_D2s_v5 --insta
 
 </details><br/>
 
-We saw in the [VMSS Windows lab](/labs/vmss-win/README.md) that the new VM Scale Set is created with a PIP and a load balancer, but the load balancer rules aren't configured so the traffic doesn't go anywhere. 
+We saw in the [VMSS Windows lab](/labs/vmss-win) that the new VM Scale Set is created with a PIP and a load balancer, but the load balancer rules aren't configured so the traffic doesn't go anywhere. 
 
 Print the list of rules to confirm there's nothing set up:
 
@@ -138,6 +138,16 @@ $customData=$(cat labs/vmss-linux/setup/cloud-init-updated.txt | base64)
 
 # OR Bash:
 customData=$(cat labs/vmss-linux/setup/cloud-init-updated.txt | base64)
+```
+
+**Note:** *Use below commands in Windows PowerShell*
+
+```
+$data=cat labs/vmss-linux/setup/cloud-init-updated.txt
+
+$customData=[Convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes($data)
+
+[Text.Encoding]::Utf8.GetString([Convert]::FromBase64String($customData))
 ```
 
 Now pass the Base-64 string to the update command, setting it as the VM's custom data field:

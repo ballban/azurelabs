@@ -1,0 +1,11 @@
+functionapp create -g jung-labs-functions-cicd -n junglabsfunctionscicd -s junglabsfunctionscicd --runtime dotnet --functions-version 4 --consumption-plan-location japaneast
+
+functionapp deployment github-actions add --branch main --build-path 'labs/functions/cicd/ChainedFunctions' --runtime-version 6 --login-with-github -g jung-labs-functions-cicd --repo 'https://github.com/ballban/azurelabs' -n junglabsfunctionscicd
+
+servicebus namespace create -g jung-labs-functions-cicd --sku Basic -n junglabsfunctionscicd -l japaneast
+
+servicebus queue create -g jung-labs-functions-cicd -n HeartbeatCreated --namespace-name junglabsfunctionscicd
+
+servicebus queue authorization-rule create -g jung-labs-functions-cicd -n queueAccess --namespace-name junglabsfunctionscicd --queue-name HeartbeatCreated --rights listen
+
+servicebus queue authorization-rule keys list -g jung-labs-functions-cicd -n queueAccess -o table --namespace-name junglabsfunctionscicd --queue-name HeartbeatCreated

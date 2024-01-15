@@ -142,14 +142,14 @@
                 },
                 "osProfile": {
                     "computerName": "[parameters('virtualMachines_vm01_name')]",
-                    "adminUsername": "elton",
+                    "adminUsername": "siddhesh",
                     "linuxConfiguration": {
                         "disablePasswordAuthentication": true,
                         "ssh": {
                             "publicKeys": [
                                 {
-                                    "path": "/home/elton/.ssh/authorized_keys",
-                                    "keyData": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC8EkfdCDwDcLbu35gB0RA0GO+uL1wV2m/11/i+EXtsd7XKrpAN82vnJph5G+ZOwxdXvYEdnksoKf012NoKciEBuWpbODlCwK+OeDy9C7KZFtc8xsFsrSTPAGNaUEBBHtXaWsBk3iQW7KjrUxbBPkXtI2PD0aGbnxH6vlOadphOm0rOaFCltPAp6CxBN5i2HMbg2L89Zar/0jWIm24xi9Tl4aUQRbhh3KAQTYCCxRelRaNi0Un9xZSdt+NKZf+7NOGdJiW5mwXHLjVTbTsBiopRhOCQADdAxIK9bmPFvZ4vHO/YFrY2h0GbL2TsKqjAFOpcjSFGRT0K6yNYV6P9clWj elton@sc-win10-i7\n"
+                                    "path": "/home/siddhesh/.ssh/authorized_keys",
+                                    "keyData": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC8EkfdCDwDcLbu35gB0RA0GO+uL1wV2m/11/i+EXtsd7XKrpAN82vnJph5G+ZOwxdXvYEdnksoKf012NoKciEBuWpbODlCwK+OeDy9C7KZFtc8xsFsrSTPAGNaUEBBHtXaWsBk3iQW7KjrUxbBPkXtI2PD0aGbnxH6vlOadphOm0rOaFCltPAp6CxBN5i2HMbg2L89Zar/0jWIm24xi9Tl4aUQRbhh3KAQTYCCxRelRaNi0Un9xZSdt+NKZf+7NOGdJiW5mwXHLjVTbTsBiopRhOCQADdAxIK9bmPFvZ4vHO/YFrY2h0GbL2TsKqjAFOpcjSFGRT0K6yNYV6P9clWj siddhesh@sc-win10-i7\n"
                                 }
                             ]
                         },

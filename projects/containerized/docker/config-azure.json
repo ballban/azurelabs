@@ -1,0 +1,17 @@
+{
+    "ConnectionStrings": {
+        "ToDoDb": "Server=tcp:jungsqlserver.database.windows.net,1433;Initial Catalog=todo-db;Persist Security Info=False;User ID=labs;Password=Strong-password0;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;",
+        "Redis": "jungredis.redis.cache.windows.net:6380,password=yLUmYoEwYK3kXL5w4cSsqpDMif6OAZbeCAzCaLfkf0M=,ssl=True,abortConnect=False"
+    },
+    "Serilog": {
+        "WriteTo": [
+            {
+                "Name": "AzureTableStorage",
+                "Args": {
+                    "storageTableName": "jungconlogs",
+                    "connectionString": "DefaultEndpointsProtocol=https;AccountName=jungconstorageaccount;AccountKey=3ZU4Sq8QFzxeIll4+gUrZFNk8FOgS1AdMKbCA1ScHwZVt7RDOkx+sA9QlpbSbAqrAYXnOq8hpLTp+AStjQA5Sg==;EndpointSuffix=core.windows.net;"
+                }
+            }
+        ]
+    }
+}

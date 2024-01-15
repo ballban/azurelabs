@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: configurable-env
   labels: 
-    kubernetes.courselabs.co: configmaps
+    kubernetes.azureauthority.in: configmaps
     app: configurable
 data:
   Configurable__Release: 24.01.2

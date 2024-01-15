@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: nginx-configmap
   labels: 
-    kubernetes.courselabs.co: persistentvolumes
+    kubernetes.azureauthority.in: persistentvolumes
 data:
   nginx.conf: |-
     user  nginx;

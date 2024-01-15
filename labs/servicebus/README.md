@@ -25,7 +25,7 @@ Create a namespace with the CLI:
 We'll switch to the CLI now. Create a Resource Group for the lab:
 
 ```
-az group create -n labs-servicebus --tags courselabs=azure -l westeurope
+az group create -n labs-servicebus --tags courselabs=azure -l southeastasia
 ```
 
 📋 Create a namespace with a `servicebus namespace` command, using the Basic SKU.
@@ -42,7 +42,7 @@ az servicebus namespace create --help
 Only name and RG are required, but the default SKU is Standard so we need to set that:
 
 ```
-az servicebus namespace create -g labs-servicebus --location westeurope --sku Basic -n <sb-name>
+az servicebus namespace create -g labs-servicebus --location southeastasia --sku Basic -n <sb-name>
 ```
 
 </details><br/>

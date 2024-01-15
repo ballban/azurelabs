@@ -89,13 +89,13 @@ Set up the configuration for the web applications - this needs a few settings wi
 
 _For the simple web app create:_
 
-- a listener with domain name `simple.appgw.azure.courselabs.co`
+- a listener with domain name `simple.appgw.azure.azureauthority.in`
 - backend pool with the two simple-web ACI IP addresses
 - rule linking the listener and pool
 
 _For the Pi app create:_
 
-- a listener with domain name `pi.appgw.azure.courselabs.co`
+- a listener with domain name `pi.appgw.azure.azureauthority.in`
 - backend pool with the Pi ACI IP address
 - rule linking the listener and pool
 
@@ -110,21 +110,21 @@ Add the fake domains to your hosts file **pointing to the IP address of your App
 ```
 # using Powershell on Windows - your terminal needs to be running as Admin:
 Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope Process -Force
-./scripts/add-to-hosts.ps1 pi.appgw.azure.courselabs.co <appgw-ip>
-./scripts/add-to-hosts.ps1 simple.appgw.azure.courselabs.co <appgw-ip>
+./scripts/add-to-hosts.ps1 pi.appgw.azure.azureauthority.in <appgw-ip>
+./scripts/add-to-hosts.ps1 simple.appgw.azure.azureauthority.in <appgw-ip>
 
 # on macOS or Linux - you'll be asked for your sudo password:
 sudo chmod +x ./scripts/add-to-hosts.sh
-./scripts/add-to-hosts.sh pi.appgw.azure.courselabs.co <appgw-ip>
-./scripts/add-to-hosts.sh simple.appgw.azure.courselabs.co <appgw-ip>
+./scripts/add-to-hosts.sh pi.appgw.azure.azureauthority.in <appgw-ip>
+./scripts/add-to-hosts.sh simple.appgw.azure.azureauthority.in <appgw-ip>
 ```
 
 > Or edit `/etc/hosts` on *nix or `C:\windows\system32\drivers\etc\hosts` on Windows
 
 Try both web addresses - you should see the apps, and the simple-web app should load-balance multiple requests between the ACI containers:
 
-- http://simple.appgw.azure.courselabs.co
-- http://pi.appgw.azure.courselabs.co
+- http://simple.appgw.azure.azureauthority.in
+- http://pi.appgw.azure.azureauthority.in
 
 ## Test the Web Application Firewall
 
@@ -142,7 +142,7 @@ You'll see standard 200 response with HTML output, which tells a hacker that SQL
 Try the same app with the same attack through the AppGW WAF:
 
 ```
-curl "http://simple.appgw.azure.courselabs.co/?id=1;select+1,2,3+from+users+where+id=1--"
+curl "http://simple.appgw.azure.azureauthority.in/?id=1;select+1,2,3+from+users+where+id=1--"
 ```
 
 This time you'll get a 403 forbidden response; the WAF blocks the request from getting to the backend.
@@ -152,7 +152,7 @@ If you want a more thorough test, try the [GoTestWAF](https://github.com/wallarm
 Start Docker Desktop and run this command, using your AppGW IP address:
 
 ```
-docker run --add-host simple.appgw.azure.courselabs.co:<app-gw-ip> sixeyed/gotestwaf:2211 --noEmailReport --url http://simple.appgw.azure.courselabs.co --skipWAFIdentification --skipWAFBlockCheck  --testSet owasp
+docker run --add-host simple.appgw.azure.azureauthority.in:<app-gw-ip> sixeyed/gotestwaf:2211 --noEmailReport --url http://simple.appgw.azure.azureauthority.in --skipWAFIdentification --skipWAFBlockCheck  --testSet owasp
 ```
 
 > It takes a while, but you should see over 500 test cases all successfully blocked by WAF.

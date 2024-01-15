@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: asset-manager
   labels: 
-    azure.courselabs.co: aks-apps
+    azure.azureauthority.in: aks-apps
     app: asset-manager
 spec:
   selector:

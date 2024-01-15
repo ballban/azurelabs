@@ -29,7 +29,7 @@ First we need to create a Resource Group where the new VM resources will live.
 _Create the group - use your own preferred location:_
 
 ```
-az group create -n labs-vm-win --tags courselabs=azure -l westeurope
+az group create -n labs-vm-win --tags courselabs=azure -l southeastasia
 ```
 
 Windows is a more demanding OS than Linux...
@@ -38,10 +38,10 @@ _Find a larger VM size we can use:_
 
 ```
 # with PowerShell:
-az vm list-sizes -o table --query "[?numberOfCores==``4`` && memoryInMb==``16384``]" --location "westeurope"
+az vm list-sizes -o table --query "[?numberOfCores==``4`` && memoryInMb==``16384``]" --location "southeastasia"
 
 # or Bash:
-az vm list-sizes -o table --query "[?numberOfCores==\`4\` && memoryInMb==\`16384\`]" --location "westeurope"
+az vm list-sizes -o table --query "[?numberOfCores==\`4\` && memoryInMb==\`16384\`]" --location "southeastasia"
 ```
 
 > The D series are the general-purpose machines, you should have an option like `Standard_D4s_v5`
@@ -57,13 +57,13 @@ To find the OS image to use, there's the `vm image list` command. You can filter
 
 ```
 # show all the offers for Windows Desktop:
-az vm image list-offers --publisher MicrosoftWindowsDesktop --location westeurope -o table
+az vm image list-offers --publisher MicrosoftWindowsDesktop --location southeastasia -o table
 
 # show all the SKUs for Windows 11:
 az vm image list-skus -l westus -f windows-11 -p MicrosoftWindowsDesktop -o table
 
 # show all the Windows 11 Pro images:
-az vm image list --sku win11-22h2-pro  -f windows-11 -p MicrosoftWindowsDesktop --location westeurope -o table --all
+az vm image list --sku win11-22h2-pro  -f windows-11 -p MicrosoftWindowsDesktop --location southeastasia -o table --all
 ```
 
 📋 Create an Windows 11 VM using a `vm create` command. Include a DNS name so you can access the machine without using the IP address.
@@ -88,7 +88,7 @@ Or - if you just want the most recent version - replace the version number with 
 
 ```
 # your password will be verified - it needs to be strong:
-az vm create -l westeurope -g labs-vm-win -n dev01 --image <image-urn> --size Standard_D4s_v5 --admin-username labs --public-ip-address-dns-name <your-unique-dns-name> --admin-password <your-strong-password>
+az vm create -l southeastasia -g labs-vm-win -n dev01 --image <image-urn> --size Standard_D4s_v5 --admin-username labs --public-ip-address-dns-name <your-unique-dns-name> --admin-password <your-strong-password>
 ```
 
 </details><br/>
@@ -139,7 +139,7 @@ You can connect to your VM using a Remote Desktop client:
 
 Use your DNS name and admin credentials to connect to the VM. You'll launch into a Windows session with the final installation steps.
 
-Copy the [setup.ps1](setup.ps1) PowerShell script to the VM (you can copy and paste from your own machine, or in the VM download it from [GitHub](https://raw.githubusercontent.com/courselabs/azure/main/labs/vm-win/setup.ps1)). Then run the script in an _Administrator_ PowerShell session. That installs Git and VS Code, so you'll be ready to work.
+Copy the [setup.ps1](setup.ps1) PowerShell script to the VM (you can copy and paste from your own machine, or in the VM download it from [GitHub](https://raw.githubusercontent.com/azureauthority/azure/main/labs/vm-win/setup.ps1)). Then run the script in an _Administrator_ PowerShell session. That installs Git and VS Code, so you'll be ready to work.
 
 ## Lab
 

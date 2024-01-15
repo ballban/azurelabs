@@ -3,4 +3,4 @@ kind: Namespace
 metadata:
   name: whoami
   labels:
-    kubernetes.courselabs.co: namespaces
+    kubernetes.azureauthority.in: namespaces

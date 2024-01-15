@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: rngapi-np
   labels: 
-    kubernetes.courselabs.co: containerprobes
+    kubernetes.azureauthority.in: containerprobes
 spec:
   selector:
     app: rngapi
@@ -19,7 +19,7 @@ kind: Service
 metadata:
   name: rngapi-lb
   labels: 
-    kubernetes.courselabs.co: containerprobes
+    kubernetes.azureauthority.in: containerprobes
 spec:
   selector:
     app: rngapi

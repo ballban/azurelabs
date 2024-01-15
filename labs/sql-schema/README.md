@@ -18,13 +18,13 @@ Start by creating a SQL Server we can use for a new database. We'll be using the
 
 ```
 # set some variables - PowerShell:
-$location='westeurope'
+$location='southeastasia'
 $rg='labs-sql-schema'
 $server='<unique-server-dns-name>'
 $database='assets-db'
 
 # OR Bash:
-location='westeurope'
+location='southeastasia'
 rg='labs-sql-schema'
 server='<unique-server-dns-name>'
 database='assets-db'
@@ -168,13 +168,13 @@ Insert some data into the assets table:
 
 ```
 INSERT INTO [dbo].[Assets] (AssetTypeId, LocationId, AssetDescription)
-VALUES (1, 1, 'Elton''s MacBook Air')
+VALUES (1, 1, 'Siddhesh''s MacBook Air')
 
 INSERT INTO [dbo].[Assets] (AssetTypeId, LocationId, AssetDescription)
-VALUES (2, 2, 'Elton''s Mac Studio')
+VALUES (2, 2, 'Siddhesh''s Mac Studio')
 
 INSERT INTO [dbo].[Assets] (AssetTypeId, LocationId, AssetDescription)
-VALUES (3, 2, 'Elton''s iPhone')
+VALUES (3, 2, 'Siddhesh''s iPhone')
 ```
 
 This is additional data, not present in the original Bacpac. Export a Bacpac from the Azure database. How would you use that file to recreate the data in another instance.

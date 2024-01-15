@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: asset-manager-lb
   labels: 
-    azure.courselabs.co: aks-apps
+    azure.azureauthority.in: aks-apps
     app: asset-manager
 spec:
   selector:

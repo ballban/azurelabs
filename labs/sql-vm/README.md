@@ -29,7 +29,7 @@ First we need to create a Resource Group where the new SQL resources will live.
 _Create the group - use your own preferred location:_
 
 ```
-az group create -n labs-sql-vm --tags courselabs=azure -l westeurope
+az group create -n labs-sql-vm --tags courselabs=azure -l southeastasia
 ```
 
 Next we need to find the VM image to use. We'll use SQL Server 2019 Standard on a Windows Server 2022 machine:
@@ -39,10 +39,10 @@ Next we need to find the VM image to use. We'll use SQL Server 2019 Standard on 
 az vm image list-offers --publisher MicrosoftSQLServer -o table
 
 # find a SKU:
-az vm image list-skus -f sql2019-ws2022 -p MicrosoftSQLServer --location westeurope -o table
+az vm image list-skus -f sql2019-ws2022 -p MicrosoftSQLServer --location southeastasia -o table
 
 # list all the images, e.g:
-az vm image list --sku standard -f sql2019-ws2022 -p MicrosoftSQLServer --location westeurope -o table --all
+az vm image list --sku standard -f sql2019-ws2022 -p MicrosoftSQLServer --location southeastasia -o table --all
 ```
 
 📋 Create a SQL Server VM using the normal `vm create` command. 
@@ -53,7 +53,7 @@ az vm image list --sku standard -f sql2019-ws2022 -p MicrosoftSQLServer --locati
 This will get you started - be sure to use the latest image version, it will have a URN like this: _MicrosoftSQLServer:sql2019-ws2022:standard:15.0.220913_
 
 ```
-az vm create -l westeurope -g labs-sql-vm -n sql01 --image <urn> --size Standard_D2_v3 --admin-username labs --admin-password <your-strong-password> --public-ip-address-dns-name  <your-dns-name> 
+az vm create -l southeastasia -g labs-sql-vm -n sql01 --image <urn> --size Standard_D2_v3 --admin-username labs --admin-password <your-strong-password> --public-ip-address-dns-name  <your-dns-name> 
 ```
 
 </details><br/>
@@ -83,8 +83,7 @@ You need to specify:
 
 - the VM name - this is the existing VM which is already running SQL Server
 - license type - enterprises may have existing SQL Server licences to use
-- management type - full gives you all the management options
-- 
+- management type - full, gives you all the management options
 
 This will convert your VM to a SQL Server VM with public access:
 
@@ -119,14 +118,14 @@ az network nsg list -g labs-sql-vm  -o table
 Check all the details and add the RDP rule:
 
 ```
-az network nsg rule create -g labs-sql-vm --nsg-name sql01NSG -n rdp --priority 150 --source-address-prefixes Internet --destination-port-ranges 3389 --access Allow
+az network nsg rule create -g labs-sql-vm --nsg-name <Your NSG name> -n rdp --priority 150 --source-address-prefixes Internet --destination-port-ranges 3389 --access Allow
 ```
 
 </details><br/>
 
 Now you can log in to the VM. We'll demonstrate using a SQL Server feature which isn't available on other services - creating a custom function which calls some .NET code.
 
-- copy the DLL file  `labs/sql-vm/udf/FormattedDate.dll` from your machine to the VM - in the root of the C: drive
+- copy the [DLL file](/labs/sql-vm/udf/FormattedDate.dll) from your machine to the VM - in the root of the C: drive
 - (this binary file contains the .NET code we want to make available through SQL Server)
 - run _SQL Server Management Studio_
 - the default connection settings use the machine name and Windows auth, which is all fine

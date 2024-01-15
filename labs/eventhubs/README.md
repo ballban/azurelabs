@@ -25,10 +25,10 @@ _Ingress_ refers to messages coming in to Event Hubs from the producers.
 Switch to the CLI to create an RG and an Event Hub namespace:
 
 ```
-az group create -n labs-eventhubs --tags courselabs=azure -l westeurope
+az group create -n labs-eventhubs --tags courselabs=azure -l southeastasia
 
 # create a namespace with set TLS and capacity:
-az eventhubs namespace create --min-tls 1.2 --capacity 2  --sku Basic -g labs-eventhubs -l westeurope -n <eh-name> 
+az eventhubs namespace create --min-tls 1.2 --capacity 2  --sku Basic -g labs-eventhubs -l southeastasia -n <eh-name> 
 ```
 
 Open the namespace in the Portal and browse to your Event Hub Namespace:

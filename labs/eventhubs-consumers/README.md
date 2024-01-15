@@ -17,15 +17,15 @@ In this lab we'll see this _partitioned consumer_ pattern in progress, seeing ho
 We'll start with the core resources - an RG and an Event Hub namespace. The Event Hub needs to be Standard SKU or higher to have support the partitioned consumer pattern:
 
 ```
-az group create -n labs-eventhubs-consumers --tags courselabs=azure -l westeurope
+az group create -n labs-eventhubs-consumers --tags courselabs=azure -l southeastasia
 
-az eventhubs namespace create --min-tls 1.2 --capacity 2 --sku Standard -g labs-eventhubs-consumers -l westeurope -n <eh-name> 
+az eventhubs namespace create --min-tls 1.2 --capacity 2 --sku Standard -g labs-eventhubs-consumers -l southeastasia -n <eh-name> 
 ```
 
 We'll also need a Storage Account and some blob containers which the consumers will use to store their progress. We'll have two different sets of processing, one needs a container to store the offsets and the other will store a copy of all events:
 
 ```
-az storage account create --sku Standard_ZRS -g labs-eventhubs-consumers -l westeurope -n <sa-name>
+az storage account create --sku Standard_ZRS -g labs-eventhubs-consumers -l southeastasia -n <sa-name>
 
 az storage container create -n checkpoints  -g labs-eventhubs-consumers --account-name <sa-name>
 

@@ -30,7 +30,7 @@ As usual, we won't create from the Portal, we'll switch to the CLI.
 Create a Resource Group for the lab:
 
 ```
-az group create -n labs-appservice  -l westeurope --tags courselabs=azure
+az group create -n labs-appservice  -l southeastasia --tags courselabs=azure
 ```
 
 Before we can create the app we need an App Service Plan - which is an abstraction of the infrastructure needed to run applications.

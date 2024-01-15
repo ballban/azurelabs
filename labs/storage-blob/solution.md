@@ -13,3 +13,5 @@ Check that blob in the Portal - now you can't download it because archived blobs
 You need to _rehydrate_ the blob to the cool or hot tier before it can be downloaded.
 
 > The Portal shows you whether a blob can be downloaded - and it tells you that rehydrating can take hours :)
+
+[Rehydration]https://learn.microsoft.com/en-us/azure/storage/blobs/archive-rehydrate-overview

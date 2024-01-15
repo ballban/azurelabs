@@ -2,8 +2,8 @@ param location string = resourceGroup().location
 var common = loadJsonContent('vars.json')
 param vmName string = uniqueString('vm', resourceGroup().id)
 param dnsLabelPrefix string = toLower('signup-${vmName}')
-param vmSize string = 'Standard_D2s_v5'
-param adminUsername string = 'vmadm'
+param vmSize string = 'Standard_D2s_v4'
+param adminUsername string = 'siddhesh'
 param sqlServerName string = uniqueString('sql', resourceGroup().id)
 @secure()
 param sqlPassword string
@@ -125,8 +125,10 @@ resource vmRunCommand 'Microsoft.Compute/virtualMachines/runCommands@2022-03-01'
       }
     ]
     source: {
-      scriptUri: 'https://courselabspublic.blob.core.windows.net/iaasbicep/vm-setup.ps1'
+      scriptUri: '../sciprts/vm-setup.ps1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               '
     }
     timeoutInSeconds: 600
   }
 }
+
+output url string = 'http://${publicIPAddress.properties.dnsSettings.fqdn}/signup'

@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: sleep
   labels:  
-    kubernetes.courselabs.co: namespaces
+    kubernetes.azureauthority.in: namespaces
     app: sleep
 spec:
   containers:

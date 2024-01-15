@@ -8,7 +8,7 @@ It changes the IP address allocation method to static and sets a specific IP add
 Create a new RG to use for the dpeloyment:
 
 ```
-az group create -n labs-arm-lab --tags courselabs=azure  --location westeurope
+az group create -n labs-arm-lab --tags courselabs=azure  --location southeastasia
 ```
 
 Deploy the template:

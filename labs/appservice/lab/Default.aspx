@@ -5,7 +5,7 @@
     <div class="jumbotron">
         <h1>Azure Labs</h1>
         <p class="lead">Learn to use Azure with self-paced labs!</p>
-        <p><a href="https://azure.courselabs.co" class="btn btn-primary btn-lg">Azure course labs &raquo;</a></p>
+        <p><a href="https://azure.azureauthority.in" class="btn btn-primary btn-lg">Azure course labs &raquo;</a></p>
     </div>
 
     <div class="row">

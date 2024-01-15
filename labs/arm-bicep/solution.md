@@ -35,7 +35,7 @@ And updates the SQL Database resource, to load the Sku from the parameter and to
 You can deploy the template into a new Resource Group:
 
 ```
-az group create -n labs-arm-bicep-lab  --tags courselabs=azure --location westeurope
+az group create -n labs-arm-bicep-lab  --tags courselabs=azure --location southeastasia
 
 # this will ask you to choose the SKU & sample schema:
 az deployment group create -g labs-arm-bicep-lab --template-file labs/arm-bicep/lab/main.bicep  --parameters adminUsername=linuxuser adminPasswordOrKey=<strong-password> sqlAdminPassword=<strong-password> 

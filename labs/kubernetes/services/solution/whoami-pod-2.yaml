@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: whoami-2
   labels:
-    kubernetes.courselabs.co: services
+    kubernetes.azureauthority.in: services
     app: whoami
 spec:
   containers:

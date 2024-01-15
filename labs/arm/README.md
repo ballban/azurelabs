@@ -12,6 +12,8 @@ In this lab we'll use Azure Resource Manager (ARM) templates for deployment. The
 
 - [Template schema reference](https://docs.microsoft.com/en-us/azure/templates/)
 
+- [Structure and syntax of ARM templates](https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/syntax)
+
 ## ARM template JSON
 
 ARM templates are powerful, but they're not easy to work with. Here's a simple template:
@@ -58,7 +60,7 @@ ARM templates can be deployed using the CLI. You always deploy a template into a
 Strat by creating a resource group:
 
 ```
-az group create -n labs-arm --tags courselabs=azure --location westeurope
+az group create -n labs-arm --tags courselabs=azure --location southeastasia
 ```
 
 📋 Use the `deployment group create` command to deploy the ARM template in `labs/arm/storage-account/azuredeploy.json`

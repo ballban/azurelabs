@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: C:\Program Files\kompose\kompose.exe -f ../docker-compose.yml convert
+    kompose.version: 1.31.2 (a92241f79)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: todo-storage
+  name: todo-storage
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: todo-storage
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: C:\Program Files\kompose\kompose.exe -f ../docker-compose.yml convert
+        kompose.version: 1.31.2 (a92241f79)
+      creationTimestamp: null
+      labels:
+        io.kompose.network/containerized-default: "true"
+        io.kompose.service: todo-storage
+    spec:
+      containers:
+        - image: mcr.microsoft.com/azure-storage/azurite
+          name: todo-storage
+          ports:
+            - containerPort: 10000
+              hostPort: 10000
+              protocol: TCP
+            - containerPort: 10001
+              hostPort: 10001
+              protocol: TCP
+            - containerPort: 10002
+              hostPort: 10002
+              protocol: TCP
+          resources: {}
+      restartPolicy: Always
+status: {}

@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: simple-web-config
 data:
-  App__Environment: PROD
+  App__Environment: UAT

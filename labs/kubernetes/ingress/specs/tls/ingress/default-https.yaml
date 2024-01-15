@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   name: default
   labels:
-    kubernetes.courselabs.co: ingress
+    kubernetes.azureauthority.in: ingress
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:

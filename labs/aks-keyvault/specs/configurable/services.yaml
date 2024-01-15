@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: configurable-lb
   labels: 
-    kubernetes.courselabs.co: secrets
+    kubernetes.azureauthority.in: secrets
     app: configurable
 spec:
   selector:

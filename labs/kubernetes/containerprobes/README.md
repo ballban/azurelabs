@@ -183,5 +183,5 @@ ___
 ## Cleanup
 
 ```
-kubectl delete all -l kubernetes.courselabs.co=containerprobes
+kubectl delete all -l kubernetes.azureauthority.in=containerprobes
 ```

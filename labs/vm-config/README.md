@@ -34,9 +34,9 @@ We'll use a custom script to install Nginx on a web server.
 Start by creating a Resource Group and a VM:
 
 ```
-az group create -n labs-vm-config --tags courselabs=azure -l westeurope
+az group create -n labs-vm-config --tags courselabs=azure -l southeastasia
 
-az vm create -l westeurope -g labs-vm-config -n web01 --image UbuntuLTS --size <your-vm-size> --public-ip-address-dns-name <your-dns-name>
+az vm create -l southeastasia -g labs-vm-config -n web01 --image Ubuntu2204 --size <your-vm-size> --public-ip-address-dns-name <your-dns-name>
 ```
 
 Custom scripts are specified in JSON. There's an extensive [schema](https://docs.microsoft.com/en-us/azure/virtual-machines/extensions/custom-script-linux#extension-schema) which you can use to provide a file URL, confidential settings for passwords, and more. 
@@ -50,7 +50,9 @@ But we'll start simple with a shell command inside a JSON string:
 📋 Use a `vm extension` command to run the custom script on your VM using JSON settings.
 
 <details>
-  <summary>Not sure how?</summary>
+  <summary>
+    Not sure how?
+  </summary>
 
 Navigate through the help text and you'll see the `set` command applies the extension:
 
@@ -127,7 +129,7 @@ az network nsg rule create -g labs-vm-config --nsg-name web01NSG -n http --prior
 
 Windows VMs also support extensions. The [Windows custom script extension](https://docs.microsoft.com/en-us/azure/virtual-machines/extensions/custom-script-windows) has a slightly different configuration to the Linux version, but the approach is broadly the same.
 
-An easier option is to use `vm run-command`, which can read a local script file and execute it on the VM. We can use the file `labs/vm-win/setup.ps1` to deploy the dev tools on a Windows VM.
+An easier option is to use `vm run-command`, which can read a local script file and execute it on the VM. We can use the [Powershell script file](/labs/vm-win/setup.ps1) to deploy the dev tools on a Windows VM.
 
 📋 Create a new Windows 11 VM and run a custom script extension to deploy the dev tools.
 
@@ -137,7 +139,7 @@ An easier option is to use `vm run-command`, which can read a local script file 
 First create the VM - be sure to use a VM size you have access to, the latest Windows 11 image and a strong password:
 
 ```
-az vm create -l westeurope -g labs-vm-config -n dev01 --image <windows-11-image> --size Standard_D4s_v5 --admin-username labs --public-ip-address-dns-name <your-unique-dns-name> --admin-password <your-strong-password>
+az vm create -l southeastasia -g labs-vm-config -n dev01 --image <windows-11-image> --size Standard_D4s_v5 --admin-username labs --public-ip-address-dns-name <your-unique-dns-name> --admin-password <your-strong-password>
 ```
 
 When the VM is created you can run the command:

@@ -37,7 +37,7 @@ Open the Portal and navigate to the new resource page. Search for "cosmos", sele
 Create a Cosmos DB account with the CLI:
 
 ```
-az group create -n labs-cosmos --tags courselabs=azure -l westeurope
+az group create -n labs-cosmos --tags courselabs=azure -l southeastasia
 
 az cosmosdb create --help
 

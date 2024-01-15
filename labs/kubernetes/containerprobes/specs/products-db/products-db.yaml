@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: products-db
   labels:
-    kubernetes.courselabs.co: containerprobes
+    kubernetes.azureauthority.in: containerprobes
 spec:
   selector:
     matchLabels:

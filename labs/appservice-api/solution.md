@@ -1,13 +1,13 @@
 # Lab Solution
 
-If you don't have a fork of the repo in GitHub, create one [here](https://github.com/courselabs/azure/fork).
+If you don't have a fork of the repo in GitHub, create one [here](https://github.com/azureauthority/azure/fork).
 
 Make sure you update the [index.html](static/index.html) file to use your own API URL. The easiest way to do that is to edit it directly in GitHub and commit the changes there.
 
 Then deploy a static web app from your fork:
 
 ```
-az staticwebapp create  -g labs-appservice-api --branch main --app-location "/labs/appservice-api/static" --login-with-github -l westeurope -n <dns-name> --source <github-fork-url>
+az staticwebapp create  -g labs-appservice-api --branch main --app-location "/labs/appservice-api/static" --login-with-github -l southeastasia -n <dns-name> --source <github-fork-url>
 ```
 
 The app will take a few minutes to deploy - you can check the status of the GitHub Action on your fork. 

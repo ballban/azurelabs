@@ -8,7 +8,7 @@ spec:
   rules:
     # TODO - replace with the DNS name for your own PIP
     # e.g. labs-aks-ingress-01.eastus.cloudapp.azure.com
-  - host: <pip-fqdn>
+  - host: jungdnsingress.japanwest.cloudapp.azure.com
     http:
       paths:
       - path: /

@@ -52,7 +52,7 @@
             <h1>Hello from <% =GetMachineName() %>!</h1>
         </div>
         <div class="footer">
-            A demo app from the <a href="https://azure.courselabs.co">Azure course labs</a>
+            A demo app from the <a href="https://azure.azureauthority.in">Azure course labs</a>
         </div>
     </body>
 

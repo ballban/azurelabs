@@ -14,7 +14,7 @@ In this lab we'll set up CI/CD for the random number API, deploying it from your
 
 ## App Service Deployment from GitHub
 
-You should have your own fork of the lab repo in GitHub (we covered that in the [static web apps lab](/labs/appservice-static/README.md)). If not you can sign up for a free GitHub account and [create a fork](https://github.com/courselabs/azure/fork).
+You should have your own fork of the lab repo in GitHub (we covered that in the [static web apps lab](/labs/appservice-static)). If not you can sign up for a free GitHub account and [create a fork](https://github.com/azureauthority/azure/fork).
 
 Then add the fork as a remote:
 
@@ -40,11 +40,11 @@ az appservice plan create -g labs-appservice-cicd -n app-plan-01 --is-linux --sk
 
 </details><br/>
 
-Browse to GitHub and find the URL for your fork. You can open [courselabs/azure](https://github.com/courselabs/azure) and expand the _Forks_ button to find a link to your own fork:
+Browse to GitHub and find the URL for your fork. You can open [azureauthority/azure](https://github.com/azureauthority/azure) and expand the _Forks_ button to find a link to your own fork:
 
 ![GitHub fork links](/img/github-fork-link.png)
 
-> Mine is https://github.com/sixeyed/azure - yours will contain your GitHub username
+> Mine is https://github.com/siddheshp/azure - yours will contain your GitHub username
 
 Create a web app and configure the deployment settings:
 
@@ -106,7 +106,7 @@ Continuous Integration (CI) removes the manual step of triggering the build - ev
 
 Azure needs to connect with GitHub for CI, so we will need to set up authentication. Azure will use a GitHub token (Personal Access Token or PAT) to authenticate:
 
-- browse to hhttps://github.com/settings/tokens/new
+- browse to https://github.com/settings/tokens/new
 - you may need to sign in again if you're using MFA
 - enter a note so you remember what the PAT is for
 - select the `workflow` and `admin:repo_hook` permissions

@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: pi-web
   labels:
-    kubernetes.courselabs.co: troubleshooting
+    kubernetes.azureauthority.in: troubleshooting
 spec:
   replicas: 1
   selector:

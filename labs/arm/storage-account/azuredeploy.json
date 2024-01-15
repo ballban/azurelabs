@@ -11,7 +11,7 @@
           },
           "location": {
             "type": "string",
-            "defaultValue": "westeurope",
+            "defaultValue": "southeastasia",
             "metadata": {
               "description": "Location to deploy to"
             }

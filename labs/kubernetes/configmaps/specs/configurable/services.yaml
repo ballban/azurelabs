@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: configurable-np
   labels: 
-    kubernetes.courselabs.co: configmaps
+    kubernetes.azureauthority.in: configmaps
     app: configurable
 spec:
   selector:
@@ -20,7 +20,7 @@ kind: Service
 metadata:
   name: configurable-lb
   labels: 
-    kubernetes.courselabs.co: configmaps
+    kubernetes.azureauthority.in: configmaps
     app: configurable
 spec:
   selector:

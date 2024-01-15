@@ -19,10 +19,10 @@ In this lab we'll use Service Bus _topics_ for pub-sub messaging, and see what h
 We'll start with a Service Bus Namespace (we covered this in the [Service Bus]() lab), but we need at least Standard tier to get the topics feature:
 
 ```
-az group create -n labs-servicebus-pubsub  --tags courselabs=azure -l westeurope
+az group create -n labs-servicebus-pubsub  --tags courselabs=azure -l southeastasia
 
 # create with TLS 1.2 and Standard tier - needed for topics
-az servicebus namespace create -g labs-servicebus-pubsub --sku Standard --min-tls 1.2 -l westeurope -n <sb-name> 
+az servicebus namespace create -g labs-servicebus-pubsub --sku Standard --min-tls 1.2 -l southeastasia -n <sb-name> 
 ```
 
 Open the namepace in the Portal. Namespaces are the container for multiple queues and topics. Click to create a topic - there are a couple of interesting options:
@@ -41,7 +41,7 @@ Check the help text:
 az servicebus topic create --help
 ```
 
-You can set TTL using a [duration format]() which sets the number of datys, hours, minutes and seconds:
+You can set TTL using a [duration format](https://en.wikipedia.org/wiki/ISO_8601#Durations) which sets the number of days, hours, minutes and seconds:
 
 ```
 az servicebus topic create --max-size 2048 --default-message-time-to-live P0DT0H10M1S -n broadcast -g labs-servicebus-pubsub  --namespace-name <sb-name> 

@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: nginx-content
   labels:
-    kubernetes.courselabs.co: ingress
+    kubernetes.azureauthority.in: ingress
 data:
   index.html: |-
     <!DOCTYPE html>

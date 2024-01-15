@@ -19,7 +19,7 @@ In this lab we'll create a file share and see how to mount it in our local machi
 Azure Files is a feature of a Storage Account. Start by creating the RG and SA:
 
 ```
-az group create -n labs-storage-files --tags courselabs=azure -l westeurope 
+az group create -n labs-storage-files --tags courselabs=azure -l southeastasia 
 
 az storage account create -g labs-storage-files --sku Standard_LRS -n <sa-name>
 ```
@@ -102,7 +102,7 @@ This script is for a Linux VM - it will need to be updated with your details:
 When you've edited the script, create a VM using cloud-init to run the script and mount the share:
 
 ```
-az vm create -g labs-storage-files -n vm01 --image UbuntuLTS --custom-data @labs/storage-files/cloud-init/mount-share.sh
+az vm create -g labs-storage-files -n vm01 --image Ubuntu2204 --custom-data @labs/storage-files/cloud-init/mount-share.sh --generate-ssh-keys
 ```
 
 Connect to the VM and check you can read and edit the file:

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+此文件由 Web 项目的发布/打包过程使用。可以通过编辑此 MSBuild 文件
+自定义此过程的行为。为了解与此相关的更多内容，请访问 https://go.microsoft.com/fwlink/?LinkID=208121。 
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAlh28gKyJzEqhOCATyL57dgAAAAACAAAAAAAQZgAAAAEAACAAAAAt5rlPVB60Q71eWFJzwRt+3CHpP6M5j2Ob44INiY6RpAAAAAAOgAAAAAIAACAAAACyx0tiU8yl5AR/oUYBH/Bj6N9qV9WPjHLEglQW+7Aj9YAAAAAOhBu6ejZa69y++J9M2HoAdH1QLZk+KG644vwUmw0ZBG2e5ILwTbQwetNhAkhLSkwXBXxfzodW0gAnSTjEFB1x5FOAQxcOtPp2R/gmoSXt5QbI3vYxnvpfLpmb+AKUspWY9mcLugWXDvyApGwjaMtLttGlBoZJ8n7V30jGlNO+q0AAAAAtI0KHfSffIdF9XuEtaVKdaWY16M8y5Rd6GxsvDCAcMAn1EXHlQL52KbHebkozaQu5c3ETVgOwH4704qxSOpFL</EncryptedPassword>
+    <History>True|2023-12-29T06:17:49.4670240Z;True|2023-12-29T15:13:58.0545234+09:00;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+</Project>

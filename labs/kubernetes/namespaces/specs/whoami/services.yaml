@@ -4,7 +4,7 @@ metadata:
   name: whoami-lb
   namespace: whoami
   labels:
-    kubernetes.courselabs.co: namespaces
+    kubernetes.azureauthority.in: namespaces
 spec:
   selector:
     app: whoami
@@ -20,7 +20,7 @@ metadata:
   name: whoami-np
   namespace: whoami
   labels:
-    kubernetes.courselabs.co: namespaces
+    kubernetes.azureauthority.in: namespaces
 spec:
   selector:
     app: whoami
