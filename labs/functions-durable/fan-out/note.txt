@@ -1,0 +1,6 @@
+group create -g jung-labs-functions-durable-fan-out -l japaneast
+
+storage account create -g jung-labs-functions-durable-fan-out --sku Standard_LRS -l japaneast -n junglabsfuncdurfanout
+
+functionapp create -g jung-labs-functions-durable-fan-out --runtime dotnet --functions-version 4 --consumption-plan-location japaneast --storage-account junglabsfuncdurfanout -n junglabsfuncdurfanout
+

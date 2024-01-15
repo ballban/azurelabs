@@ -1,0 +1,11 @@
+group create -g jung-labs-functions-durable -l japaneast
+
+
+servicebus namespace create -g jung-labs-functions-durable --sku Basic -n junglabsfunctionsdurable -l japaneast
+servicebus queue create -g jung-labs-functions-durable -n HeartbeatCreated --namespace-name junglabsfunctionsdurable
+servicebus queue authorization-rule create -g jung-labs-functions-durable -n queueAccess --namespace-name junglabsfunctionsdurable --queue-name HeartbeatCreated --rights send listen
+servicebus queue authorization-rule keys list -g jung-labs-functions-durable -n queueAccess --namespace-name junglabsfunctionsdurable --queue-name HeartbeatCreated --query 'primaryConnectionString'
+
+
+storage account create -g jung-labs-functions-durable --sku Standard_LRS -l japaneast -n junglabsfunctionsdurable
+functionapp create -g jung-labs-functions-durable --runtime dotnet --functions-version 4 --consumption-plan-location japaneast --storage-account junglabsfunctionsdurable -n junglabsfunctionsdurable
