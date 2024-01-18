@@ -1,0 +1,2 @@
+curl "https://junglabsapim.azure-api.net/newapi/students" -H "Ocp-Apim-Subscription-Key: 99ee1a0efd79403ebbbd86812a096676"
+curl "https://junglabsapim.azure-api.net/newapi/students/1234" -H "Ocp-Apim-Subscription-Key: 99ee1a0efd79403ebbbd86812a096676"

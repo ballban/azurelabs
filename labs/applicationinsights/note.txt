@@ -1,0 +1,18 @@
+az>> group create -g jung-labs-appinsights -l japaneast
+az>> monitor log-analytics workspace create -g jung-labs-appinsights -n junglabsloganalytics -l japaneast
+az>> monitor app-insights component create --app labs --kind web -g jung-labs-appinsights --workspace junglabsloganalytics -l japaneast
+monitor app-insights component show --app labs -g jung-labs-appinsights --query connectionString -o tsv
+InstrumentationKey=a91889d2-91fe-43ac-9d91-d50bb2a45536;IngestionEndpoint=https://japaneast-1.in.applicationinsights.azure.com/;LiveEndpoint=https://japaneast.livediagnostics.monitor.azure.com/
+
+
+az>> group create -g jung-labs-appinsights-apps -l japaneast
+az container create -g jung-labs-appinsights-apps  --image courselabs/fulfilment-processor:appinsights-1.0 --no-wait --name fp1 --secure-environment-variables "ApplicationInsights__ConnectionString=InstrumentationKey=a91889d2-91fe-43ac-9d91-d50bb2a45536;IngestionEndpoint=https://japaneast-1.in.applicationinsights.azure.com/;LiveEndpoint=https://japaneast.livediagnostics.monitor.azure.com/"
+az container create -g jung-labs-appinsights-apps  --image courselabs/fulfilment-processor:appinsights-1.0 --no-wait --name fp2 --secure-environment-variables "ApplicationInsights__ConnectionString=InstrumentationKey=a91889d2-91fe-43ac-9d91-d50bb2a45536;IngestionEndpoint=https://japaneast-1.in.applicationinsights.azure.com/;LiveEndpoint=https://japaneast.livediagnostics.monitor.azure.com/"
+az container create -g jung-labs-appinsights-apps  --image courselabs/fulfilment-processor:appinsights-1.0 --no-wait --name fp3 --secure-environment-variables "ApplicationInsights__ConnectionString=InstrumentationKey=a91889d2-91fe-43ac-9d91-d50bb2a45536;IngestionEndpoint=https://japaneast-1.in.applicationinsights.azure.com/;LiveEndpoint=https://japaneast.livediagnostics.monitor.azure.com/"
+az container create -g jung-labs-appinsights-apps  --image courselabs/fulfilment-processor:appinsights-1.2 --no-wait --name fp4 --secure-environment-variables "ApplicationInsights__ConnectionString=InstrumentationKey=a91889d2-91fe-43ac-9d91-d50bb2a45536;IngestionEndpoint=https://japaneast-1.in.applicationinsights.azure.com/;LiveEndpoint=https://japaneast.livediagnostics.monitor.azure.com/"
+
+cd src/rng/Numbers.Web
+az webapp up -g jung-labs-appinsights-apps --plan rng-plan-01 --sku B1 --os-type Linux --runtime dotnetcore:6.0 -l japaneast -n junglabsappinsightsapps
+
+cd ../Numbers.Api
+az webapp up -g jung-labs-appinsights-apps --plan rng-plan-01 --sku B1 --os-type Linux --runtime dotnetcore:6.0 -l japaneast -n junglabsappinsightsappsApi

@@ -1,0 +1,5 @@
+az>> group create -g jung-labs-apim -l japaneast
+az>> apim create --sku-name Developer -g jung-labs-apim -n junglabsapim --publisher-name jung --publisher-email ballban@hotmail.com
+
+cd src/rng/Numbers.Api
+az webapp up -g jung-labs-apim --os-type Linux --sku B1 --runtime dotnetcore:6.0 -n junglabsapim -l japaneast

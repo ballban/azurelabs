@@ -1,0 +1,27 @@
+group create -g jung-labs-signalr -l japaneast
+signalr create -g jung-labs-signalr --sku Free_F1 -l japaneast -n junglabssignalr
+signalr key list -g jung-labs-signalr -n junglabssignalr -o tsv --query 'primaryConnectionString'
+
+Endpoint=https://junglabssignalr.service.signalr.net;AccessKey=At7eYL8HwEOYnhtssLdNtqMeQPkRxxcR/YqQVg5Fa/c=;Version=1.0;
+
+dotnet run --project src/signalr/chat --urls=http://localhost:5005/ --Azure:SignalR:Enabled=true --Azure:SignalR:ConnectionString='Endpoint=https://junglabssignalr.service.signalr.net;AccessKey=At7eYL8HwEOYnhtssLdNtqMeQPkRxxcR/YqQVg5Fa/c=;Version=1.0;'
+dotnet run --project src/signalr/chat --urls=http://localhost:5006/ --Azure:SignalR:Enabled=true --Azure:SignalR:ConnectionString='Endpoint=https://junglabssignalr.service.signalr.net;AccessKey=At7eYL8HwEOYnhtssLdNtqMeQPkRxxcR/YqQVg5Fa/c=;Version=1.0;'
+
+cd src/signalr/chat
+az webapp up -g jung-labs-signalr --os-type Linux --sku B1 --runtime dotnetcore:6.0 -n junglabssignalr
+
+az webapp config appsettings set --settings Azure__SignalR__Enabled='true' Azure__SignalR__ConnectionString='Endpoint=https://junglabssignalr.service.signalr.net;AuthType=azure.msi;Version=1.0;' -g jung-labs-signalr -n junglabssignalr
+
+az webapp identity assign -g jung-labs-signalr -n junglabssignalr
+az>> signalr show -g jung-labs-signalr --query id -n junglabssignalr
+"/subscriptions/ba8d99ad-8c07-49ef-bdef-1e93d12f6a49/resourceGroups/jung-labs-signalr/providers/Microsoft.SignalRService/SignalR/junglabssignalr"
+az>> webapp identity show --query principalId -o tsv -g jung-labs-signalr -n junglabssignalr
+d183e9bd-ed00-428a-abb6-e50ad5a81dca
+
+az>> webapp identity show --query principalId -o tsv -g jung-labs-signalr -n junglabssignalr
+d183e9bd-ed00-428a-abb6-e50ad5a81dca
+9bd-ed00-428a-abb6-e50ad5a81dca --scope "/subscriptions/ba8d99ad-8c07-49ef-bdef-1e93d12f6a49/resourceGroups/jung-labs-signalr/providers/Microsoft.SignalRService/SignalR/junglabssignalr"  
+RBAC service might reject creating role assignment without --assignee-principal-type in the future. Better to specify --assignee-principal-type manually.
+(AuthorizationFailed) The client 'student-lab-03@azure.datacouch.io' with object id '7f315754-1976-4005-aba3-e872ad254f84' does not have authorization to perform action 'Microsoft.Authorization/roleAssignments/write' over scope '/subscriptions/ba8d99ad-8c07-49ef-bdef-1e93d12f6a49/resourceGroups/jung-labs-signalr/providers/Microsoft.SignalRService/SignalR/junglabssignalr/providers/Microsoft.Authorization/roleAssignments/63467a7c-7ed6-4b66-95e6-187412e691ac' or the scope is invalid. If access was recently granted, please refresh your credentials.
+Code: AuthorizationFailed
+Message: The client 'student-lab-03@azure.datacouch.io' with object id '7f315754-1976-4005-aba3-e872ad254f84' does not have authorization to perform action 'Microsoft.Authorization/roleAssignments/write' over scope '/subscriptions/ba8d99ad-8c07-49ef-bdef-1e93d12f6a49/resourceGroups/jung-labs-signalr/providers/Microsoft.SignalRService/SignalR/junglabssignalr/providers/Microsoft.Authorization/roleAssignments/63467a7c-7ed6-4b66-95e6-187412e691ac' or the scope is invalid. If access was recently granted, please refresh your credentials.
